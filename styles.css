@@ -1,0 +1,299 @@
+/* --- styles.css --- */
+
+
+/* Import de Bebas Neue */
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('fonts/BebasNeue-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: 
+
+    repeating-linear-gradient(
+      rgba(0, 0, 0, 0.2) 0px,
+      rgba(0, 0, 0, 0.2) 1px,
+      rgba(0, 0, 0, 0.3) 2px
+    ); 
+
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 3;
+
+  animation: glitchMove 1.5s infinite linear, 
+             flicker 0.08s infinite alternate;
+}
+
+@keyframes glitchMove {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-1px, 1px); /* Vibrations subtiles */
+  }
+}
+
+@keyframes flicker {
+  from { opacity: 0.03; } 
+  to { opacity: 0.3; } 
+}
+
+
+
+/* --- Corps de la page : Design Mobile First --- */
+body {
+  position: relative; /* Permet d'ajouter un pseudo-élément */
+  margin: 20px; /* Ajout de marge pour éloigner le contenu du bord */
+  padding: 0;
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+  font-family: 'Verdana', sans-serif;  /* Texte secondaire en Verdana */
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Final-Motif-.jpg') repeat-y center top; /* Noir semi-transparent sur l'image */
+  background-size: cover;
+  transform: perspective(800px) rotateX(1deg) scale(1.03);
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: repeating-linear-gradient(
+    rgba(0, 0, 0, 0.2) 0px,
+    rgba(0, 0, 0, 0.2) 1px,
+    rgba(0, 0, 0, 0.3) 2px
+  ); 
+  pointer-events: none; /* Ne gêne pas les interactions */
+  z-index: 2; /* Passe au-dessus du fond mais derrière le contenu */
+  opacity: 0.2; /* Régle l’intensité de l’effet */
+}
+
+
+h1, h2 {
+  font-family: 'Bebas Neue', sans-serif;  /* Retour en Bebas */
+  font-weight: normal; /* Bebas Neue est naturellement épaisse */
+  text-transform: uppercase;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  font-size: clamp(28px, 4vw, 36px);  /* Taille réduite pour être plus proche des boutons */
+  color: #fff;  /* Blanc pour garder un style brut et lisible */
+  text-align: center;  /* Recentre les titres */
+  padding: 12px 30px; /* Espacement vertical amélioré et horizontal réduit */
+  background: linear-gradient(180deg, #0b1f3c 0%, #091d4e 100%); /* Variation des couleurs */
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.1);  /* Effet glossy léger */
+  border-radius: 10px; /* Bords arrondis pour adoucir le style */
+  width: auto; /* Taille adaptée au contenu */
+}
+/* --- Boutons --- */
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(180deg, #0b1f3c 0%, #020f1f 100%);  /* Effet glossy */
+  border: 2px solid #6a0dad;  /* Bordure violette métallique */
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.1);  /* Glossy */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);  /* Légère ombre interne */
+  padding: 12px 24px;
+  margin: 10px;
+  border-radius: 0;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  width: auto;
+  max-width: 300px;
+}
+
+.btn:hover {
+  background-color: #0b1f3c;  /* Bleu marine au survol */
+  color: #fff;
+  border-color: #0b1f3c;  /* Harmonisation avec la couleur du bouton */
+  transition: none;  /* Suppression de l'animation au survol */
+}
+
+
+
+/* --- Liens généraux --- */
+a {
+  color: #fff;
+}
+
+/* --- Liens Réseaux Sociaux --- */
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;  /* Recentre les boutons */
+  padding-left: 0;  /* Supprime la marge gauche inutile */
+  gap: 10px;
+  margin: 20px 0;
+}
+
+/* --- Footer (Image + Contact) --- */
+footer {
+  width: 100%;
+  background-color: transparent;  /* Fond entièrement transparent */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+}
+
+.footer-image {
+  width: 100%;
+  height: auto;
+  border: 2px solid #464646;  /* Bordure violette métallique */
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.1);  /* Glossy */
+  margin: 30px 0;
+}
+
+.footer-contact {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  padding: 10px 0;
+  background-color: transparent;
+}
+
+/* --- MEDIA QUERIES POUR TABLETTES & ÉCRANS LARGE --- */
+@media (min-width: 768px) {
+  .btn {
+    width: auto;
+  }
+
+  .links {
+    gap: 20px;
+  }
+
+  .footer-image {
+    max-width: 1000px;
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+    padding: 40px;
+  }
+
+  h1 {
+    font-size: 36px;  /* Réduction du titre pour rester proche des boutons */
+  }
+
+  .links {
+    gap: 30px;
+  }
+}
+
+.logo {
+  display: block;       /* Permet un bon contrôle de l'alignement */
+  margin: 40px auto;    /* Centre le logo horizontalement */
+  max-width: 300px;     /* Ajuste la taille du logo */
+  height: auto;         /* Garde les proportions correctes */
+}
+
+.bio {
+  max-width: 800px;  /* Largeur limitée pour une meilleure lisibilité */
+  margin: 40px auto;  /* Centré avec un bon espacement */
+  padding: 20px;
+  background: rgba(15, 15, 15, 0.8); /* Fond sombre et légèrement transparent */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);  /* Effet industriel marqué */
+  border: 2px solid #6a0dad;  /* Bordure violette subtile */
+  text-align: justify;  /* Texte justifié pour une meilleure lecture */
+  line-height: 1.6;  /* Améliore la lisibilité */
+}
+
+.bio p {
+  margin: 10px 0;
+  font-size: 14px;  /* Taille plus petite pour éviter qu'il dépasse la taille des boutons */
+  line-height: 1.6;  /* Garde une bonne lisibilité */
+}
+
+.btn {
+  font-size: 14px; /* Assure que les boutons et les paragraphes sont cohérents */
+}
+
+@media (min-width: 768px) {
+  .bio p {
+    font-size: 16px;  /* Augmente légèrement la taille sur écran plus large */
+  }
+
+  .btn {
+    font-size: 16px; /* Même logique pour les boutons */
+  }
+}
+
+.bio-content {
+  display: flex;          /* Disposition en ligne */
+  align-items: center;    /* Aligne verticalement le texte et l'image */
+  gap: 30px;              /* Espacement entre texte et image */
+}
+
+.bio-text {
+  flex: 1;                /* Le texte prend plus de place */
+  text-align: justify;    /* Justifie le texte pour une meilleure lisibilité */
+}
+
+.bio-image {
+  max-width: 200px;       /* Taille raisonnable pour l'image */
+  border: 2px solid #6e6e6e;  /* Bordure violette subtile */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);  /* Effet métallique sombre */
+}
+
+.bio-image img {
+  width: 100%;            /* L'image occupe entièrement son cadre */
+  height: auto;           /* Garde les proportions correctes */
+  border-radius: 4px;     /* Bords légèrement adoucis */
+}
+
+/* Media Queries pour l'adaptation mobile */
+@media (max-width: 768px) {
+  .bio-content {
+    flex-direction: column; /* Passe en colonne sur les petits écrans */
+  }
+
+  .bio-image {
+    max-width: 100%; /* L’image devient pleine largeur sur mobile */
+  }
+}
+
+/* --- Bandeau défilant (marquee) --- */
+.marquee {
+  width: 50%;
+  background-color: #0b1f3c; /* Fond sombre bleu marine pour rester dans l'ambiance */
+  color: #fff;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  padding: 10px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8); /* Effet rétro indus dark */
+  position: relative;
+  margin: 0 auto; /* Centre le bandeau */
+  border-radius: 5px; /* Bords arrondis pour adoucir le style */
+}
+
+.marquee-content {
+  display: inline-block;
+  padding-left: 100%;   /* Démarre le texte en dehors de l'écran */
+  animation: scroll 15s linear infinite;  /* Vitesse contrôlée et infinie */
+}
+
+.marquee:hover .marquee-content {
+  animation-play-state: paused;  /* Stoppe le défilement au survol */
+}
+
+@keyframes scroll {
+  from { transform: translateX(0%); }  
+  to { transform: translateX(-100%); }  /* Défilement complet vers la gauche */
+}
