@@ -39,9 +39,10 @@ body::before {
     transform: translate(0, 0);
   }
   to {
-    transform: translate(-1px, 1px); /* Vibrations subtiles */
+    transform: translate(-0.5px, 0.5px); /* Vibrations moins fortes */
   }
 }
+
 
 @keyframes flicker {
   from { opacity: 0.03; } 
@@ -215,9 +216,12 @@ footer {
 
 .bio p {
   margin: 10px 0;
-  font-size: 14px;  /* Taille plus petite pour éviter qu'il dépasse la taille des boutons */
+  font-size: clamp(12px, 1em, 16px);  /* Empêche la taille du texte de dépasser celle des boutons */
   line-height: 1.6;  /* Garde une bonne lisibilité */
 }
+
+
+
 
 .btn {
   font-size: 14px; /* Assure que les boutons et les paragraphes sont cohérents */
