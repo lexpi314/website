@@ -118,12 +118,15 @@
     <img src="scene-lex-pi-2024-mail.gif" alt="Scène Lex Pi 2024" class="footer-image">
     <p class="footer-contact">Booking : <a href="mailto:lexpimusic@gmail.com">lexpimusic@gmail.com</a></p>
   </footer>
-  
+
   <script>
     const galleryItems = document.querySelectorAll('.gallery-item');
     let currentIndex = 0; 
   
     function showFullImage(index) {
+      // Scroller automatiquement en haut de page
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+  
       const fullSizeImage = document.createElement('div');
       fullSizeImage.classList.add('full-image');
       fullSizeImage.innerHTML = `
@@ -164,6 +167,7 @@
       });
     });
   </script>
+  
 </body>
 </html>
 

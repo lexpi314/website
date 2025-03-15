@@ -1,11 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <url>
     <loc>https://www.lexpi.fr/</loc>
     <lastmod>2024-03-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+
+    <!-- Images de la galerie -->
+    <image:image>
+      <image:loc>https://www.lexpi.fr/concert_gallery/Lex%20Pi%20Live%20(Electro%20Rock)%201.jpg</image:loc>
+      <image:caption>Lex Pi Live (Concert Electro rock) 1</image:caption>
+      <image:title>Lex Pi Live (Electro Rock)</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://www.lexpi.fr/concert_gallery/Lex%20Pi%20Live%20(Electro%20Rock)%203.jpg</image:loc>
+      <image:caption>Lex Pi Live (Concert Electro rock) 3</image:caption>
+      <image:title>Lex Pi Live (Electro Rock)</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://www.lexpi.fr/concert_gallery/Lex%20Pi%20Live%20(Electro%20Rock)%204.jpg</image:loc>
+      <image:caption>Lex Pi Live (Concert Electro rock) 4</image:caption>
+      <image:title>Lex Pi Live (Electro Rock)</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://www.lexpi.fr/concert_gallery/Lex%20Pi%20Live%20(Electro%20Rock)%205.jpg</image:loc>
+      <image:caption>Lex Pi Live (Concert Electro rock) 5</image:caption>
+      <image:title>Lex Pi Live (Electro Rock)</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://www.lexpi.fr/concert_gallery/Lex%20Pi%20Live%20(Electro%20Rock)%206.jpg</image:loc>
+      <image:caption>Lex Pi Live (Concert Electro rock) 6</image:caption>
+      <image:title>Lex Pi Live (Electro Rock)</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://www.lexpi.fr/concert_gallery/Lex%20Pi%20Live%202%20(Electro%20Rock).jpg</image:loc>
+      <image:caption>Lex Pi Live (Concert Electro rock) 2</image:caption>
+      <image:title>Lex Pi Live (Electro Rock)</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://www.lexpi.fr/concert_gallery/Lex%20Pi%20Live%207(Electro%20Rock).jpg</image:loc>
+      <image:caption>Lex Pi Live (Concert Electro rock) 7</image:caption>
+      <image:title>Lex Pi Live (Electro Rock)</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://www.lexpi.fr/concert_gallery/Lex%20Pi%20Live%208(Electro%20Rock).jpg</image:loc>
+      <image:caption>Lex Pi Live (Concert Electro rock) 8</image:caption>
+      <image:title>Lex Pi Live (Electro Rock)</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://www.lexpi.fr/concert_gallery/Lex%20Pi%20Live%209(Electro%20Rock).jpg</image:loc>
+      <image:caption>Lex Pi Live (Concert Electro rock) 9</image:caption>
+      <image:title>Lex Pi Live (Electro Rock)</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://www.lexpi.fr/concert_gallery/Lex%20Pi%20Surreal%20painting.jpg</image:loc>
+      <image:caption>Lex Pi Surreal Painting</image:caption>
+      <image:title>Lex Pi Surreal Painting</image:title>
+    </image:image>
   </url>
 
   <url>
