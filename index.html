@@ -59,7 +59,7 @@
 
   <div class="marquee">
     <div class="marquee-content">
-      NEW SONG NOW AVAILABLE !!! "POPSKäR" CHECK IT OUT <a href="https://open.spotify.com/intl-fr/track/6d9PUuqmZ8sd9KtAfIfA3o?si=195f28200ef54fd1" target="_blank" class="marquee-link">HERE</a>
+      NEW SONG NOW AVAILABLE !!! "POPSKäR" CHECK IT OUT <a href="https://distrokid.com/hyperfollow/lexpi/popskr-version-2025" target="_blank" class="marquee-link">HERE</a>
     </div>
 </div>
 
@@ -98,13 +98,72 @@
   <a class="btn" href="Fiche Technique Lex Pi 2025.pdf" target="_blank">Fiche Technique (PDF)</a>
   <a class="btn" href="Lex-Pi-pressbook-2025.pdf" target="_blank">Dossier de Presse (PDF)</a>
 
+  <section class="photo-gallery">
+    <div class="gallery-container hidden">
+      <img src="concert_gallery/Lex Pi Live (Electro Rock) 1.jpg" alt="Lex Pi Live (Concert Electro rock) 1" class="gallery-item">
+      <img src="concert_gallery/Lex Pi Live (Electro Rock) 3.jpg" alt="Lex Pi Live (Concert Electro rock) 3" class="gallery-item">
+      <img src="concert_gallery/Lex Pi Live (Electro Rock) 4.jpg" alt="Lex Pi Live (Concert Electro rock) 4" class="gallery-item">
+      <img src="concert_gallery/Lex Pi Live (Electro Rock) 5.jpg" alt="Lex Pi Live (Concert Electro rock) 5" class="gallery-item">
+      <img src="concert_gallery/Lex Pi Live (Electro Rock) 6.jpg" alt="Lex Pi Live (Concert Electro rock) 6" class="gallery-item">
+      <img src="concert_gallery/Lex Pi Live 2 (Electro Rock).jpg" alt="Lex Pi Live (Concert Electro rock) 2" class="gallery-item">
+      <img src="concert_gallery/Lex Pi Live 7(Electro Rock).jpg" alt="Lex Pi Live (Concert Electro rock) 7" class="gallery-item">
+      <img src="concert_gallery/Lex Pi Live 8(Electro Rock).jpg" alt="Lex Pi Live (Concert Electro rock) 8" class="gallery-item">
+      <img src="concert_gallery/Lex Pi Live 9(Electro Rock).jpg" alt="Lex Pi Live (Concert Electro rock) 9" class="gallery-item">
+      <img src="concert_gallery/Lex Pi Surreal painting.jpg" alt="Lex Pi Surreal Painting" class="gallery-item">
+    </div>
+  </section>
+  
 
   <footer>
     <img src="scene-lex-pi-2024-mail.gif" alt="Scène Lex Pi 2024" class="footer-image">
     <p class="footer-contact">Booking : <a href="mailto:lexpimusic@gmail.com">lexpimusic@gmail.com</a></p>
   </footer>
   
-
+  <script>
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    let currentIndex = 0; 
+  
+    function showFullImage(index) {
+      const fullSizeImage = document.createElement('div');
+      fullSizeImage.classList.add('full-image');
+      fullSizeImage.innerHTML = `
+        <img src="${galleryItems[index].src}" alt="${galleryItems[index].alt}">
+        <span class="close-btn">&times;</span>
+        <div class="nav-arrows">
+          <span class="prev-arrow">&#9664;</span>
+          <span class="next-arrow">&#9654;</span>
+        </div>
+      `;
+      document.body.appendChild(fullSizeImage);
+  
+      // Fermer l'image
+      fullSizeImage.addEventListener('click', (event) => {
+        if (event.target.classList.contains('close-btn') || event.target === fullSizeImage) {
+          fullSizeImage.remove();
+        }
+      });
+  
+      // Navigation
+      fullSizeImage.querySelector('.prev-arrow').addEventListener('click', (event) => {
+        event.stopPropagation();
+        currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+        fullSizeImage.querySelector('img').src = galleryItems[currentIndex].src;
+      });
+  
+      fullSizeImage.querySelector('.next-arrow').addEventListener('click', (event) => {
+        event.stopPropagation();
+        currentIndex = (currentIndex + 1) % galleryItems.length;
+        fullSizeImage.querySelector('img').src = galleryItems[currentIndex].src;
+      });
+    }
+  
+    galleryItems.forEach((item, index) => {
+      item.addEventListener('click', () => {
+        currentIndex = index;
+        showFullImage(currentIndex);
+      });
+    });
+  </script>
 </body>
 </html>
 
