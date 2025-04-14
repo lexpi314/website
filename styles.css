@@ -472,3 +472,14 @@ footer {
     grid-template-columns: repeat(3, 1fr); /* Passe à 3 colonnes pour ne pas surcharger l'écran */
   }
 }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
