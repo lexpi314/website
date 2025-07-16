@@ -60,8 +60,6 @@ body {
   color: #fff;
   text-align: center;
   font-family: 'Verdana', sans-serif;  /* Texte secondaire en Verdana */
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Final-Motif-.jpg') repeat-y center top; /* Fallback sur l'image */
-  background-size: cover;
   overflow-x: hidden; /* Empêche le scroll horizontal */
   z-index: 1; /* Assure que le contenu est au-dessus de la vidéo */
 }
@@ -499,8 +497,11 @@ footer {
   width: 100vw;
   height: 100vh;
   object-fit: cover;
+  object-position: center center;
   z-index: -2; /* Très en arrière-plan */
   pointer-events: none; /* Ne gêne pas les interactions */
+  min-width: 100%;
+  min-height: 100%;
 }
 
 /* --- Overlay sombre sur la vidéo --- */
