@@ -103,7 +103,7 @@ h1, h2 {
   color: #fff;  /* Blanc pour garder un style brut et lisible */
   text-align: center;  /* Recentre les titres */
   padding: 12px 30px; /* Espacement vertical amélioré et horizontal réduit */
-  background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%); /* Gris anthracite */
+  background: linear-gradient(180deg, #2b2a2d 0%, #1b1a1d 100%); /* Gris anthracite avec touche violette */
   box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.1);  /* Effet glossy léger */
   border-radius: 10px; /* Bords arrondis pour adoucir le style */
   width: auto; /* Taille adaptée au contenu */
@@ -113,8 +113,8 @@ h1, h2 {
   display: inline-block;
   text-decoration: none;
   color: #fff;
-  background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%);  /* Gris anthracite */
-  border: 2px solid #404040;  /* Bordure gris anthracite */
+  background: linear-gradient(180deg, #2b2a2d 0%, #1b1a1d 100%);  /* Gris anthracite avec touche violette */
+  border: 2px solid #a259ff;  /* Bordure violet flashy et saturé */
   box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.1);  /* Glossy */
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);  /* Légère ombre interne */
   padding: 12px 24px;
@@ -163,7 +163,7 @@ footer {
 .footer-image {
   width: 100%;
   height: auto;
-  border: 2px solid #404040;  /* Bordure gris anthracite */
+  border: 1.2px solid #a259ff;  /* Bordure violet flashy et saturé, plus fine */
   box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.1);  /* Glossy */
   margin: 30px 0;
 }
@@ -218,7 +218,7 @@ footer {
   padding: 20px;
   background: rgba(15, 15, 15, 0.8); /* Fond sombre et légèrement transparent */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);  /* Effet industriel marqué */
-  border: 2px solid #404040;  /* Bordure gris anthracite */
+  border: 1.2px solid #a259ff;  /* Bordure violet flashy et saturé, plus fine */
   text-align: justify;  /* Texte justifié pour une meilleure lecture */
   line-height: 1.6;  /* Améliore la lisibilité */
 }
@@ -259,7 +259,7 @@ footer {
 
 .bio-image {
   max-width: 200px;       /* Taille raisonnable pour l'image */
-  border: 2px solid #6e6e6e;  /* Bordure violette subtile */
+  border: 1.2px solid #6e6e6e;  /* Bordure violette subtile */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);  /* Effet métallique sombre */
 }
 
@@ -283,17 +283,15 @@ footer {
 /* --- Bandeau défilant (marquee) --- */
 .marquee {
   width: 50%;
-  background-color: #2a2a2a; /* Fond sombre gris anthracite */
+  background-color: transparent; /* Fond transparent */
   color: #fff;
   font-family: 'Bebas Neue', sans-serif;
   font-size: 20px;
   padding: 10px 0;
   overflow: hidden;
   white-space: nowrap;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8); /* Effet rétro indus dark */
   position: relative;
   margin: 0 auto; /* Centre le bandeau */
-  border-radius: 5px; /* Bords arrondis pour adoucir le style */
 }
 
 .marquee-content {
@@ -316,7 +314,7 @@ footer {
   background: rgba(20, 20, 20, 0.9);
   padding: 20px;
   text-align: center;
-  border: 2px solid #404040;
+  border: 1.2px solid #a259ff;
   border-radius: 12px;
   width: 100%;
   max-width: 800px;
@@ -334,7 +332,7 @@ footer {
 /* --- MENU DÉROULANT --- */
 .gallery-toggle {
   background: #2a2a2a;
-  border: 2px solid #404040;
+  border: 2px solid #a259ff;
   color: #fff;
   font-family: 'Bebas Neue', sans-serif;
   text-transform: uppercase;
@@ -512,7 +510,7 @@ footer {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
   z-index: -1; /* Au-dessus de la vidéo mais derrière tout le contenu */
   pointer-events: none;
 }
