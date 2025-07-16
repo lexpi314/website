@@ -54,15 +54,24 @@ body::before {
 /* --- Corps de la page : Design Mobile First --- */
 body {
   position: relative; /* Permet d'ajouter un pseudo-élément */
-  margin: 20px; /* Ajout de marge pour éloigner le contenu du bord */
+  margin: 0; /* Suppression de la marge pour éviter les conflits */
   padding: 0;
   background-color: #111;
   color: #fff;
   text-align: center;
   font-family: 'Verdana', sans-serif;  /* Texte secondaire en Verdana */
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Final-Motif-.jpg') repeat-y center top; /* Noir semi-transparent sur l'image */
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Final-Motif-.jpg') repeat-y center top; /* Fallback sur l'image */
   background-size: cover;
+  overflow-x: hidden; /* Empêche le scroll horizontal */
+  z-index: 1; /* Assure que le contenu est au-dessus de la vidéo */
+}
+
+/* --- Conteneur principal pour isoler la transformation --- */
+.main-content {
   transform: perspective(800px) rotateX(1deg) scale(1.03);
+  position: relative;
+  z-index: 1;
+  margin: 20px; /* Marge pour éloigner le contenu du bord */
 }
 
 body::after {
@@ -482,4 +491,34 @@ footer {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+/* --- Vidéo d'arrière-plan --- */
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -2; /* Très en arrière-plan */
+  pointer-events: none; /* Ne gêne pas les interactions */
+}
+
+/* --- Overlay sombre sur la vidéo --- */
+.background-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  z-index: -1; /* Au-dessus de la vidéo mais derrière tout le contenu */
+  pointer-events: none;
+}
+
+/* --- S'assurer que tous les éléments principaux sont au-dessus de la vidéo --- */
+header, .bio, .photo-gallery, footer, .marquee {
+  position: relative;
+  z-index: 10;
 }

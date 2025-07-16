@@ -48,7 +48,18 @@
 </head>
 <body>
 
-  <header>
+  <!-- Vidéo d'arrière-plan -->
+  <video class="background-video" autoplay muted loop playsinline>
+    <source src="Final-Motif-animated.mp4" type="video/mp4">
+    <!-- Fallback sur l'image si la vidéo ne peut pas être chargée -->
+  </video>
+  
+  <!-- Overlay sombre sur la vidéo -->
+  <div class="background-overlay"></div>
+
+  <!-- Conteneur principal avec transformation -->
+  <div class="main-content">
+    <header>
 
       <!-- Réseaux sociaux -->
     <div class="links">
@@ -148,8 +159,30 @@
      <!--Badge Linkaband généré le 2-04-2025; Copyright Linkaband 2019-->
     <a href='https://linkaband.com/lex-pi?utm_source=badge&utm_campaign=178435' target='_blank'><img src='https://linkaband.com/assets/images/validation/reservation-noir.png' alt='Lex-pi' style='width: 100px; height: 100px;'/></a>
   </footer>
+  </div> <!-- Fin du conteneur principal -->
 
   <script>
+    // Gestion de la vidéo d'arrière-plan avec fallback
+    const backgroundVideo = document.querySelector('.background-video');
+    const backgroundOverlay = document.querySelector('.background-overlay');
+    
+    // Fonction pour gérer le fallback vers l'image
+    function handleVideoError() {
+      console.log('Vidéo non supportée, utilisation du fallback image');
+      backgroundVideo.style.display = 'none';
+      backgroundOverlay.style.display = 'none';
+      // Le CSS du body utilise déjà l'image comme fallback
+    }
+    
+    // Écouter les erreurs de la vidéo
+    backgroundVideo.addEventListener('error', handleVideoError);
+    
+    // Vérifier si la vidéo peut être lue
+    backgroundVideo.addEventListener('loadeddata', function() {
+      console.log('Vidéo d\'arrière-plan chargée avec succès');
+    });
+    
+    // Gestion de la galerie d'images
     const galleryItems = document.querySelectorAll('.gallery-item');
     let currentIndex = 0; 
   
